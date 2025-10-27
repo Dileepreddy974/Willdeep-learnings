@@ -51,6 +51,31 @@ function addEntranceAnimations() {
     stepCards.forEach((card, index) => {
         card.style.animationDelay = `${0.2 + index * 0.2}s`;
     });
+    
+    // Add scroll animations
+    addScrollAnimations();
+}
+
+// Add scroll-triggered animations
+function addScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements that should animate on scroll
+    const animateElements = document.querySelectorAll('.animate-on-scroll, .step-card, .opportunity-card');
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
 }
 
 // Setup event listeners
@@ -163,10 +188,37 @@ function setupEventListeners() {
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-15px) scale(1.02)';
+            this.style.transition = 'all 0.3s ease';
+            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = '';
+            this.style.boxShadow = '';
+        });
+    });
+    
+    // Add click animations to buttons
+    const buttons = document.querySelectorAll('.btn, .apply-btn, .filter-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
         });
     });
 }
