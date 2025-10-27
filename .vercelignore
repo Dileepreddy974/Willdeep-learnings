@@ -1,0 +1,24 @@
+# Ignore development files
+node_modules/
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore old backend folder (we're using Vercel functions now)
+backend/
+
+# Ignore duplicate folders
+willdeep-website/
+
+# Ignore deployment scripts
+deploy.ps1
+deploy.sh
+run.bat
+run.ps1
+run.sh
+
+# Ignore documentation files (optional)
+*.md
+!VERCEL_DEPLOYMENT_GUIDE.md

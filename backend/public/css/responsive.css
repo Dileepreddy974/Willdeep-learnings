@@ -1,0 +1,306 @@
+    /* Responsive Design */
+@media screen and (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .process-steps {
+        gap: 20px;
+    }
+    
+    .step-card {
+        flex: 1 1 200px;
+        max-width: 250px;
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
+    }
+    
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background: #0d47a1;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: center;
+    }
+    
+    body.dark-mode .hamburger span {
+        background: #4fc3f7;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Ensure horizontal navigation layout */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        /* Keep horizontal layout as per requirements */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 10px 0;
+        border-radius: 0 0 20px 20px;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid #2196f3;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        max-height: 40vh;
+        overflow-y: auto;
+        gap: 5px;
+    }
+    
+    body.dark-mode .nav-menu {
+        background: rgba(30, 30, 46, 0.95);
+        border: 2px solid #4fc3f7;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: 5px;
+        width: auto;
+        opacity: 1;
+        transform: none;
+        flex: 0 0 auto;
+    }
+    
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        margin: 2px 5px;
+        border-radius: 20px;
+        width: auto;
+        white-space: nowrap;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    /* Profile Page Responsive */
+    .profile-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .profile-container {
+        padding: 20px;
+    }
+    
+    /* Process Steps Responsive */
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .step-card {
+        flex: 1 1 auto;
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    
+    /* Hero Section Responsive */
+    .hero {
+        padding: 120px 15px 60px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 95%;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        margin: 5px 0;
+        padding: 10px 20px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    .nav-container {
+        padding: 15px 3%;
+    }
+    
+    .logo h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Profile Page Extra Small Screens */
+    .profile-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Ensure navigation items wrap properly on very small screens */
+    .nav-menu {
+        padding: 15px 0;
+        max-height: 60vh;
+        gap: 8px;
+    }
+    
+    .nav-item {
+        margin: 8px 0;
+        flex: 1 1 auto;
+        min-width: 45%;
+    }
+    
+    .nav-link {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .profile-container {
+        padding: 15px;
+    }
+    
+    .profile-header {
+        text-align: center;
+    }
+    
+    .profile-avatar {
+        margin-bottom: 15px;
+        font-size: 3rem;
+    }
+    
+    /* Process Steps Extra Small Screens */
+    .process-steps {
+        gap: 15px;
+    }
+    
+    .step-card {
+        padding: 20px;
+    }
+    
+    .step-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Hero Section Extra Small Screens */
+    .hero {
+        padding: 100px 10px 50px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    .cta-buttons {
+        gap: 10px;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .contact-item i {
+        margin-right: 0;
+    }
+}
